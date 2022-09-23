@@ -3,6 +3,7 @@ const {
   GatewayIntentBits,
   ApplicationCommandOptionType,
   Embed,
+  ActivityType,
 } = require("discord.js");
 require("dotenv/config");
 
@@ -28,6 +29,10 @@ const client = new Client({
 
 client.on("ready", () => {
   console.log("The bot is ready");
+
+  client.user.setActivity("with spoons", {
+    type: ActivityType.Playing,
+  });
 
   commands = client.application?.commands;
 
